@@ -1,19 +1,19 @@
 
-ques =[]
+total_list = []
+
 while True:
-    item = input("질문을 입력해주세요: ")
-    if item == 'q':
+    ques = input("질문을 입력해주세요: ")
+    if ques == 'q':
         break
-    ques.append(item)
-    
+    total_list.append({"질문": ques, "답변": ""})
+
 print("\n======================================================\n")
 
-dic={}
-for key in ques:
-    print(key)
+for i in total_list:
+    print(i["질문"])
     ans = input(">> 답변을 입력해주세요: ")
     if ans == 'q':
         break
-    dic[key] = ans
+    i["답변"] = ans
 
-print("결과: ", dic)
+print("결과: ", total_list)
